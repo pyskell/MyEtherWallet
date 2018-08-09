@@ -7,12 +7,12 @@
         <div class="title">
           <h4>{{ $t('interface.contractAddr') }}</h4>
           <div class="select-contract no-border">
-            <currency-picker :currency="existingContracts" page="interactWContract" :token="false"></currency-picker>
+            <currency-picker :currency="network.type.contracts" v-on:selectedCurrency="selectedCurrency" page="interactWContract" :token="false"></currency-picker>
           </div>
         </div>
       </div>
       <div class="the-form domain-name">
-        <input type="number" name="" value="" placeholder="Enter Domain Name or Address" />
+        <input type="text" name="" v-model="address" placeholder="Enter Domain Name or Address" />
       </div>
     </div>
 
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="the-form domain-name">
-        <textarea class="custom-textarea-1" name=""></textarea>
+        <textarea class="custom-textarea-1" name="" v-model="abi"></textarea>
       </div>
     </div>
 
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import CurrencyPicker from '../../components/CurrencyPicker'
 import InterfaceContainerTitle from '../../components/InterfaceContainerTitle'
 import InterfaceBottomText from '@/components/InterfaceBottomText'
@@ -56,25 +57,21 @@ export default {
   },
   data () {
     return {
-      existingContracts: [
-        {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijweo',
-          value: '1'
-        },
-        {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijweo g',
-          value: '2'
-        },
-        {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijweo gf',
-          value: '3'
-        },
-        {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijw',
-          value: '4'
-        }
-      ]
+      abi: '',
+      address: ''
     }
+  },
+  methods: {
+    selectedCurrency (currency) {
+      console.log(currency.address)
+      this.abi = JSON.stringify(currency.abi)
+      this.address = currency.address
+    }
+  },
+  computed: {
+    ...mapGetters({
+      network: 'network'
+    })
   }
 }
 </script>
