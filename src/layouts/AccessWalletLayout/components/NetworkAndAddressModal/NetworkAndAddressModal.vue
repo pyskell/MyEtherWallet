@@ -1,14 +1,21 @@
 <template>
-  <b-modal ref="networkAndAddress" hide-footer class="bootstrap-modal modal-network-and-address" title="Network and Address">
+  <b-modal 
+    ref="networkAndAddress" 
+    hide-footer 
+    class="bootstrap-modal modal-network-and-address" 
+    title="Network and Address">
     <div class="content-container-1">
       <div class="hd-derivation">
         <h4>{{ $t("accessWallet.hdDerivationPath") }}</h4>
         <div class="dropdown-button-container">
-          <b-dropdown id="hd-derivation-path" text="m/44’/60’/0’/0" class="dropdown-button-1">
+          <b-dropdown 
+            id="hd-derivation-path" 
+            text="m/44’/60’/0’/0" 
+            class="dropdown-button-1">
             <b-dropdown-item class="active">m/44’/60’/0’/0</b-dropdown-item>
             <b-dropdown-item>m/44’/60’/0’/0</b-dropdown-item>
             <b-dropdown-item>m/44’/60’/0’/0</b-dropdown-item>
-            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-divider/>
             <b-dropdown-item>{{ $t("accessWallet.customPath") }}</b-dropdown-item>
           </b-dropdown>
         </div>
@@ -25,7 +32,7 @@
           <li>{{ $t("accessWallet.id") }}</li>
           <li>{{ $t("common.address") }}</li>
           <li>{{ $t("common.balance") }}</li>
-          <li></li>
+          <li/>
         </ul>
 
         <ul class="address-block address-data selected">
@@ -34,8 +41,8 @@
           <li>2.2233445 ETH</li>
           <li class="user-input-checkbox">
             <label class="checkbox-container checkbox-container-small">
-              <input type="checkbox" />
-              <span class="checkmark checkmark-small"></span>
+              <input type="checkbox" >
+              <span class="checkmark checkmark-small"/>
             </label>
           </li>
         </ul>
@@ -46,8 +53,8 @@
           <li>2.2233445 ETH</li>
           <li class="user-input-checkbox">
             <label class="checkbox-container checkbox-container-small">
-              <input type="checkbox" />
-              <span class="checkmark checkmark-small"></span>
+              <input type="checkbox" >
+              <span class="checkmark checkmark-small"/>
             </label>
           </li>
         </ul>
@@ -58,8 +65,8 @@
           <li>2.2233445 ETH</li>
           <li class="user-input-checkbox">
             <label class="checkbox-container checkbox-container-small">
-              <input type="checkbox" />
-              <span class="checkmark checkmark-small"></span>
+              <input type="checkbox" >
+              <span class="checkmark checkmark-small"/>
             </label>
           </li>
         </ul>
@@ -70,8 +77,8 @@
           <li>2.2233445 ETH</li>
           <li class="user-input-checkbox">
             <label class="checkbox-container checkbox-container-small">
-              <input type="checkbox" />
-              <span class="checkmark checkmark-small"></span>
+              <input type="checkbox" >
+              <span class="checkmark checkmark-small"/>
             </label>
           </li>
         </ul>
@@ -85,8 +92,8 @@
 
     <div class="accept-terms">
       <label class="checkbox-container">{{ $t("accessWallet.acceptTerms") }} <a href="/">{{ $t("common.terms") }}</a>.
-        <input type="checkbox" />
-        <span class="checkmark"></span>
+        <input type="checkbox" >
+        <span class="checkmark"/>
       </label>
     </div>
     <div class="button-container">
@@ -107,13 +114,12 @@
 
 <script>
 export default {
-  data () {
-    return {
-    }
+  data() {
+    return {};
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "NetworkAndAddressModal.scss";
+@import "NetworkAndAddressModal.scss";
 </style>

@@ -1,18 +1,25 @@
 <template>
   <div class="interact-with-contract-container">
-    <interface-container-title :title="$t('common.interactWcontract')"></interface-container-title>
+    <interface-container-title :title="$t('common.interactWcontract')"/>
 
     <div class="send-form">
       <div class="title-container">
         <div class="title">
           <h4>{{ $t('interface.contractAddr') }}</h4>
           <div class="select-contract no-border">
-            <currency-picker :currency="existingContracts" page="interactWContract" :token="false"></currency-picker>
+            <currency-picker 
+              :currency="existingContracts" 
+              :token="false" 
+              page="interactWContract"/>
           </div>
         </div>
       </div>
       <div class="the-form domain-name">
-        <input type="number" name="" value="" placeholder="Enter Domain Name or Address" />
+        <input 
+          type="number" 
+          name="" 
+          value="" 
+          placeholder="Enter Domain Name or Address" >
       </div>
     </div>
 
@@ -27,58 +34,63 @@
         </div>
       </div>
       <div class="the-form domain-name">
-        <textarea class="custom-textarea-1" name=""></textarea>
+        <textarea 
+          class="custom-textarea-1" 
+          name=""/>
       </div>
     </div>
 
     <div class="submit-button-container">
       <!-- <router-link :to="{ name: 'InteractWithContract', params: {} }"> -->
-        <div class="submit-button large-round-button-green-filled clickable">
-          {{ $t('common.continue') }}
-        </div>
+      <div class="submit-button large-round-button-green-filled clickable">
+        {{ $t('common.continue') }}
+      </div>
       <!-- </router-link> -->
-      <interface-bottom-text link="/" :linkText="$t('interface.learnMore')" :question="$t('interface.haveIssues')"></interface-bottom-text>
+      <interface-bottom-text 
+        :link-text="$t('interface.learnMore')" 
+        :question="$t('interface.haveIssues')" 
+        link="/"/>
     </div>
 
   </div>
 </template>
 
 <script>
-import CurrencyPicker from '../../components/CurrencyPicker'
-import InterfaceContainerTitle from '../../components/InterfaceContainerTitle'
-import InterfaceBottomText from '@/components/InterfaceBottomText'
+import CurrencyPicker from "../../components/CurrencyPicker";
+import InterfaceContainerTitle from "../../components/InterfaceContainerTitle";
+import InterfaceBottomText from "@/components/InterfaceBottomText";
 
 export default {
   components: {
-    'interface-container-title': InterfaceContainerTitle,
-    'interface-bottom-text': InterfaceBottomText,
-    'currency-picker': CurrencyPicker
+    "interface-container-title": InterfaceContainerTitle,
+    "interface-bottom-text": InterfaceBottomText,
+    "currency-picker": CurrencyPicker
   },
-  data () {
+  data() {
     return {
       existingContracts: [
         {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijweo',
-          value: '1'
+          name: "Battle Of Thermopy wefweoifjwfo ewrofijweo",
+          value: "1"
         },
         {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijweo g',
-          value: '2'
+          name: "Battle Of Thermopy wefweoifjwfo ewrofijweo g",
+          value: "2"
         },
         {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijweo gf',
-          value: '3'
+          name: "Battle Of Thermopy wefweoifjwfo ewrofijweo gf",
+          value: "3"
         },
         {
-          name: 'Battle Of Thermopy wefweoifjwfo ewrofijw',
-          value: '4'
+          name: "Battle Of Thermopy wefweoifjwfo ewrofijw",
+          value: "4"
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "InteractWithContractContainer.scss";
+@import "InteractWithContractContainer.scss";
 </style>

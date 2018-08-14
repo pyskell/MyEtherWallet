@@ -1,12 +1,20 @@
 <template>
-  <b-modal ref="signedTx" hide-footer class="bootstrap-modal signed-tx-modal" title="Signed Transaction">
+  <b-modal 
+    ref="signedTx" 
+    hide-footer 
+    class="bootstrap-modal signed-tx-modal" 
+    title="Signed Transaction">
     <div class="d-block">
       <p class="title">Signed Transaction</p>
       <div class="signed-tx-container">
         <code>
           {{ signedTx }}
         </code>
-        <input ref="signedTxInput" style="position: absolute; top: 0; opacity: 0;" :value="signedTx" autocomplete="off"/>
+        <input 
+          ref="signedTxInput" 
+          :value="signedTx" 
+          style="position: absolute; top: 0; opacity: 0;" 
+          autocomplete="off">
       </div>
       <div class="with-toggle">
         <p class="title">
@@ -14,8 +22,10 @@
         </p>
         <div class="sliding-switch-white">
           <label class="switch">
-            <input type="checkbox" v-on:click="showRaw = !showRaw">
-            <span class="slider round"></span>
+            <input 
+              type="checkbox" 
+              @click="showRaw = !showRaw">
+            <span class="slider round"/>
           </label>
         </div>
       </div>
@@ -26,7 +36,9 @@
       </div>
     </div>
     <div class="button-container">
-      <b-btn class="mid-round-button-green-filled close-button" @click="copyAndContinue">
+      <b-btn 
+        class="mid-round-button-green-filled close-button" 
+        @click="copyAndContinue">
         Copy It and Continue
       </b-btn>
     </div>
@@ -35,23 +47,23 @@
 
 <script type="text/javascript">
 export default {
-  name: 'signed-tx-modal',
-  props: ['signedTx', 'rawTx', 'pathUpdate'],
-  data () {
+  name: "SignedTxModal",
+  props: ["signedTx", "rawTx", "pathUpdate"],
+  data() {
     return {
       showRaw: false
-    }
+    };
   },
   methods: {
-    copyAndContinue () {
-      this.$refs.signedTxInput.select()
-      document.execCommand('copy')
-      this.pathUpdate()
+    copyAndContinue() {
+      this.$refs.signedTxInput.select();
+      document.execCommand("copy");
+      this.pathUpdate();
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-  @import "SignedTxModal.scss";
+@import "SignedTxModal.scss";
 </style>
