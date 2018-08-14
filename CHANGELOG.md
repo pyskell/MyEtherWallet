@@ -1,5 +1,8 @@
+### Feature
+- Let users deploy and/or interact with contracts [#45](https://github.com/MyEtherWallet/MyEtherWallet/pull/45)
+
 ### Devop
-- Fetch tokens and contract abi [#41](https://github.com/MyEtherWallet/MyEtherWallet/pull/41)
+- Fetch tokens and contract abi on build [#41](https://github.com/MyEtherWallet/MyEtherWallet/pull/41)
 
 ### Release v0.0.2
 ### Feature
